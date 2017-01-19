@@ -1,0 +1,25 @@
+repos:
+  - "http://negativo17.org/repos/fedora-spotify.repo"
+  - "http://negativo17.org/repos/fedora-steam.repo"
+
+copr_repos:
+  - mosquito/atom
+
+packages:
+  - spotify-client
+  - google-chrome-stable
+  - terminator
+  - atom
+  - git
+  - ansible
+  - polari
+  - docker
+  - bash-completion
+  - wine
+  - steam
+  - boxes
+  - thunderbird
+  - drpm
+  - gnome-tweak-tool
+  - tmux
+  - vim
