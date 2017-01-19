@@ -25,6 +25,16 @@
       src: profile
       dest: "/root/.bash_profile"
 
+  - name: Install module dependencies
+    dnf:
+      state: latest
+      name: "{{ item }}"
+    with_items:
+      - python2-dnf
+      - firewalld
+      - python-firewall
+      - libselinux-python
+
   - name: "Setup firewalld for VM's"
     firewalld:
       state: enabled
