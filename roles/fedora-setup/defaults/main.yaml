@@ -23,3 +23,5 @@ packages:
   - gnome-tweak-tool
   - tmux
   - vim
+  - redshift
+  - powertop
