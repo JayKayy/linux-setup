@@ -53,7 +53,7 @@
       src: google-chrome.repo
       dest: /etc/yum.repos.d/google-chrome.repo
 
-  - name: "Add Steam repo"
+  - name: "Add other repos"
     command: "dnf config-manager --add-repo={{ item }}"
     with_items:
       - "{{ repos }}"
