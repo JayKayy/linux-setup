@@ -4,6 +4,8 @@ repos:
 
 copr_repos:
   - mosquito/atom
+  - mystro256/gnome-redshift
+  
 
 packages:
   - spotify-client
@@ -23,5 +25,6 @@ packages:
   - gnome-tweak-tool
   - tmux
   - vim
-  - redshift
+  - gnome-shell-extension-redshift
   - powertop
+  - bluejeans
