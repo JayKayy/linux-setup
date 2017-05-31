@@ -4,8 +4,6 @@ repos:
 
 copr_repos:
   - mosquito/atom
-  - mystro256/gnome-redshift
-  
 
 packages:
   - spotify-client
@@ -14,7 +12,6 @@ packages:
   - atom
   - git
   - ansible
-  - polari
   - docker
   - bash-completion
   - wine
@@ -25,6 +22,7 @@ packages:
   - gnome-tweak-tool
   - tmux
   - vim
-  - gnome-shell-extension-redshift
   - powertop
   - bluejeans
+  - mutt
+  - weechat

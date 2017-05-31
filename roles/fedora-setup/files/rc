@@ -7,7 +7,6 @@ fi
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
-#export GOPATH=/home/jkwiatko/devel/go
 
 # User specific aliases and functions
 alias ..="cd .." 

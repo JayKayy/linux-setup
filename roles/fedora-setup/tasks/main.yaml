@@ -25,6 +25,12 @@
       src: profile
       dest: "/root/.bash_profile"
 
+  - name: "Add mutt configuration"
+    template:
+      src: muttrc
+      dest: "/home/{{ username }}/.muttrc"
+
+
   - name: Install module dependencies
     dnf:
       state: latest
