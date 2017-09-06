@@ -9,7 +9,6 @@ packages:
   - spotify-client
   - google-chrome-stable
   - terminator
-  - atom
   - git
   - ansible
   - docker
@@ -17,7 +16,6 @@ packages:
   - wine
   - steam
   - boxes
-  - thunderbird
   - drpm
   - gnome-tweak-tool
   - tmux
@@ -26,3 +24,5 @@ packages:
   - bluejeans
   - mutt
   - weechat
+  - httpd
+

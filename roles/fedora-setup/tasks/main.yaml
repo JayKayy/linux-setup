@@ -30,7 +30,6 @@
       src: muttrc
       dest: "/home/{{ username }}/.muttrc"
 
-
   - name: Install module dependencies
     dnf:
       state: latest
