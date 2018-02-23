@@ -1,0 +1,9 @@
+---
+
+  - name: "Installing packages"
+    package:
+      name: "{{ packages }}"
+      state: present
+
+
+

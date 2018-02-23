@@ -1,0 +1,17 @@
+---
+packages:
+  - python2-dnf
+  - firewalld
+  - python-firewall
+  - libselinux-python
+  - spotify-client
+  - git
+  - steam
+  - boxes
+  - drpm
+  - gnome-tweak-tool
+  - tmux
+  - vim
+  - powertop
+
+ 

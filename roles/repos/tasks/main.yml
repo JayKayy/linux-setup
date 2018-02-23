@@ -1,0 +1,7 @@
+---
+
+  - name: "Adding repos"
+    command: "dnf config-manager --add-repo={{ item }}"
+    with_items:
+      - "{{ repos }}"
+

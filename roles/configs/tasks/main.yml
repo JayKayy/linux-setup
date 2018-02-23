@@ -1,0 +1,6 @@
+---
+
+  - name: "Configure .zshrc"
+    copy:
+      src: zshrc
+      dest: /home/{{ username }}/.zshrc

@@ -1,0 +1,5 @@
+---
+repos:
+  - "http://negativo17.org/repos/fedora-spotify.repo"
+  - "http://negativo17.org/repos/fedora-steam.repo"
+

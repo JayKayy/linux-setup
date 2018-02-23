@@ -1,0 +1,10 @@
+---
+
+  - name: "Create user"
+    user:
+      name: "{{ username }}"
+      groups: wheel
+      append: yes
+      shell: "/bin/{{ shell }}"
+      home: "/home/{{ username }}"
+

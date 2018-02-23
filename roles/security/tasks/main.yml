@@ -1,0 +1,14 @@
+---
+
+  - name: "Enable firewalld"
+    service:
+      state: started
+      enabled: yes
+      name: firewalld
+
+
+  - name: "Enable SElinux"
+    selinux:
+      state: enforcing
+      policy: targeted
+

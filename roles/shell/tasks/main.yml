@@ -1,0 +1,12 @@
+---
+
+  - name: "Install OhMyZsh"
+    get_url:
+      url: https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+      force: yes
+      dest: /tmp/zsh_install.sh
+    when: shell == 'zsh'
+
+  - name: "Install OhMyZsh"
+    command: /tmp/zsh_install.sh
+    when: shell == 'zsh'

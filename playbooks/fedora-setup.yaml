@@ -1,4 +1,9 @@
 ---
-- hosts: all
+- hosts: localhost
   roles:
-    - role: fedora-setup
+    - role: repos
+    - role: packages
+    - role: security
+    - role: shell
+    - role: user
+    - role: configs
