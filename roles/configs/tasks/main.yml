@@ -4,3 +4,4 @@
     copy:
       src: zshrc
       dest: /home/{{ username }}/.zshrc
+    when: shell == 'zsh'

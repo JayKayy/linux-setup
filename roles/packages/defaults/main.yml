@@ -1,5 +1,5 @@
 ---
-packages:
+dnf_packages:
   - python2-dnf
   - firewalld
   - python-firewall
@@ -14,4 +14,9 @@ packages:
   - vim
   - powertop
 
- 
+pacman_packages:
+  - firewalld
+  - git
+  - steam-manjaro
+  - tmux
+  - vim

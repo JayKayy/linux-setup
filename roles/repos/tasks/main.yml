@@ -1,7 +1,7 @@
 ---
 
-  - name: "Adding repos"
-    command: "dnf config-manager --add-repo={{ item }}"
-    with_items:
-      - "{{ repos }}"
+  - include_tasks: dnf.yml
+    when: ansible_pkg_mgr == 'dnf'
 
+  - include_tasks: pacman.yml
+    when: ansible_pkg_mgr == 'pacman'

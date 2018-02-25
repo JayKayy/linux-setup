@@ -1,2 +1,9 @@
 [laptop]
-localhost connection=local
+localhost 
+
+[laptop:vars]
+ansible_connection=local
+ansible_become=yes
+shell=fish
+username=jkwiatko
+retry_files_enabled=no
