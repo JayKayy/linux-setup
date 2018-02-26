@@ -1,10 +1,16 @@
 ---
 
+
+  - name: "Find shell binary"
+    command: "which {{ shell }}"
+    register: shell_path
+    changed_when: false
+
   - name: "Create user"
     user:
       name: "{{ username }}"
       groups: wheel
       append: yes
-      shell: "/bin/{{ shell }}"
+      shell: "{{ shell_path.stdout }}"
       home: "/home/{{ username }}"
 

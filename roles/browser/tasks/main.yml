@@ -1,0 +1,13 @@
+---
+
+  - name: "Install Vivaldi"
+    command: yaourt --noconfirm -S vivaldi
+    when: browser == 'vivaldi'
+    become: no
+
+  - name: "Install firefox"
+    package:
+      name: firefox
+      state: latest
+    when: browser == 'firefox'
+

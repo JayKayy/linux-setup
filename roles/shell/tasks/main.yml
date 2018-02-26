@@ -1,6 +1,7 @@
 ---
 
 # Looking to less bulky alternative. Really only need zsh completion
+# Found fish
   - name: "Install shell"
     package: 
       name: "{{ shell }}"

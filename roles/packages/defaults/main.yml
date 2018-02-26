@@ -16,6 +16,7 @@ dnf_packages:
 
 pacman_packages:
   - firewalld
+  - yaourt
   - git
   - steam-manjaro
   - tmux

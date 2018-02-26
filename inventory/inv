@@ -5,5 +5,6 @@ localhost
 ansible_connection=local
 ansible_become=yes
 shell=fish
+browser=vivaldi
 username=jkwiatko
 retry_files_enabled=no

@@ -3,6 +3,7 @@
   roles:
     - role: repos
     - role: packages
+    - role: browser
     - role: security
     - role: shell
     - role: user
