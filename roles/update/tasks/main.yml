@@ -1,0 +1,6 @@
+---
+
+ - name: "Updating all packages"
+   package:
+     name: "*"
+     state: latest

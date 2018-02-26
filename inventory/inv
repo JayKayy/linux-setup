@@ -1,9 +1,8 @@
-[laptop]
+[target]
 localhost 
 
-[laptop:vars]
+[target:vars]
 ansible_connection=local
-ansible_become=yes
 shell=fish
 browser=vivaldi
 username=jkwiatko

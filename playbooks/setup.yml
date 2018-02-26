@@ -1,10 +1,15 @@
 ---
 - hosts: localhost
+  become: yes
   roles:
     - role: repos
     - role: packages
-    - role: browser
     - role: security
     - role: shell
     - role: user
+
+- hosts: localhost
+  become: no
+  roles:
+    - role: browser
     - role: configs
