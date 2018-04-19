@@ -2,12 +2,19 @@
 
   - name: "Install Vivaldi"
     command: yaourt --noconfirm -S vivaldi
-    when: browser == 'vivaldi'
+    when: browser == 'vivaldi' and ansible_pkg_mgr == 'pacman'
     become: no
 
-  - name: "Install firefox"
+  - name: "Install Firefox"
     package:
       name: firefox
       state: latest
-    when: browser == 'firefox'
+    become: yes
+    when: firefox in browser
 
+  - name: "Install Chromium"
+    package:
+      name: chromium
+      state: latest
+    become: yes
+    when: chromium in browser

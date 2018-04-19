@@ -4,6 +4,6 @@ localhost
 [target:vars]
 ansible_connection=local
 shell=fish
-browser=vivaldi
+browser=["firefox","chromium"]
 username=jkwiatko
 retry_files_enabled=no
