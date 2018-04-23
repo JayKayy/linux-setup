@@ -1,5 +1,5 @@
 [install]
-192.168.122.148
+hostA
 
 [install:vars]
 # These variables below will apply to all hosts listed under the [install] group above.
@@ -7,13 +7,13 @@
 # 
 # Don't SSH configuring localhost
 # Comment this line below if configuring via ssh
-#ansible_connection=local
+ansible_connection=local
 
 #
 # User 
 # User name of a single user to create.
 #
-username=jkwiatko
+username=userA
 
 # 
 # Shell
@@ -42,7 +42,7 @@ repos=["http://negativo17.org/repos/fedora-spotify.repo", "http://negativo17.org
 
 # 
 # Security
-# Enable selinux if your distribution supports it.
+# Whether to enable selinux if your distribution supports it.
 selinux=true
 
 
