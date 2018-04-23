@@ -11,5 +11,4 @@
     selinux:
       state: enforcing
       policy: targeted
-    when: ansible_selinux_python_present
 

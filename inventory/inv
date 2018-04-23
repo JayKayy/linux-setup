@@ -10,30 +10,41 @@
 #ansible_connection=local
 
 #
-# User information
+# User 
+# User name of a single user to create.
 #
 username=jkwiatko
 
 # 
+# Shell
 # Which Shell to use. Ensure the shell is installed in packages list.
 #
 shell=fish
 
 # 
+# External Packages
+#
 # These are a list of URL's to packages that are external to the
 # distribution's repositories and will be downloaded and installed.
 #
 external_packages=["https://downloads.vivaldi.com/stable/vivaldi-stable-1.14.1077.60-1.x86_64.rpm"]
 
 #
-# Fedora packages
+# Packages
+# A list of packages to install from configured repositories.
 #
 packages=["fish", "python2-dnf", "firewalld", "python3-firewall", "libselinux-python", "spotify-client", "git", "virt-manager", "drpm", "tmux", "vim", "powertop"]
 
 # 
 # Repositories
-# Additional repositories to enable
+# Additional repositories to enable.
 repos=["http://negativo17.org/repos/fedora-spotify.repo", "http://negativo17.org/repos/fedora-steam.repo"]
+
+# 
+# Security
+# Enable selinux if your distribution supports it.
+selinux=true
+
 
 #
 # Configs
@@ -43,5 +54,5 @@ repos=["http://negativo17.org/repos/fedora-spotify.repo", "http://negativo17.org
  
 #
 # Manjaro packages 
-#
+# An example of how package names may differ by distribution. Simply uncomment the list for the distro you're installing
 #packages=["fish", "firewalld", "python-firewall", "libselinux-python", "git", "virt-manager", "tmux", "vim", "powertop", "yaourt"]

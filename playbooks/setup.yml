@@ -7,6 +7,7 @@
     - role: packages
       when: packages is defined
     - role: security
+      when: selinux
     - role: shell
       when: shell is defined
     - role: user
