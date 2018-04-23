@@ -1,7 +1,9 @@
 ---
 
   - name: "Adding repos"
-    command: "dnf config-manager --add-repo={{ item }}"
+    apt_repository:
+      state: present
+      repo: "{{ repos }} "
     with_items:
       - "{{ repos }}"
 
