@@ -1,7 +1,13 @@
 ---
+#
+# Need to find a generic way of doing this
+#
 
   - include_tasks: dnf.yml
     when: ansible_pkg_mgr == 'dnf'
 
   - include_tasks: pacman.yml
     when: ansible_pkg_mgr == 'pacman'
+
+  - include_tasks: apt.yml
+    when: ansible_pkg_mgr == 'apt'

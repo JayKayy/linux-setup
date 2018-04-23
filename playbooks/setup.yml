@@ -1,15 +1,18 @@
 ---
-- hosts: localhost
+- hosts: install
   become: yes
   roles:
     - role: repos
+      when: repos is defined
     - role: packages
+      when: packages is defined
     - role: security
+      when: selinux
     - role: shell
+      when: shell is defined
     - role: user
-
-- hosts: localhost
-  become: no
-  roles:
-    - role: browser
+      when: username is defined
+    - role: external_packages
+      when: external_packages is defined
     - role: configs
+      when: configs is defined

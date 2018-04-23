@@ -1,9 +1,58 @@
-[target]
-localhost 
+[install]
+hostA
 
-[target:vars]
+[install:vars]
+# These variables below will apply to all hosts listed under the [install] group above.
+
+# 
+# Don't SSH configuring localhost
+# Comment this line below if configuring via ssh
 ansible_connection=local
+
+#
+# User 
+# User name of a single user to create.
+#
+username=userA
+
+# 
+# Shell
+# Which Shell to use. Ensure the shell is installed in packages list.
+#
 shell=fish
-browser=["firefox","chromium"]
-username=jkwiatko
-retry_files_enabled=no
+
+# 
+# External Packages
+#
+# These are a list of URL's to packages that are external to the
+# distribution's repositories and will be downloaded and installed.
+#
+external_packages=["https://downloads.vivaldi.com/stable/vivaldi-stable-1.14.1077.60-1.x86_64.rpm"]
+
+#
+# Packages
+# A list of packages to install from configured repositories.
+#
+packages=["fish", "python2-dnf", "firewalld", "python3-firewall", "libselinux-python", "spotify-client", "git", "virt-manager", "drpm", "tmux", "vim", "powertop"]
+
+# 
+# Repositories
+# Additional repositories to enable.
+repos=["http://negativo17.org/repos/fedora-spotify.repo", "http://negativo17.org/repos/fedora-steam.repo"]
+
+# 
+# Security
+# Whether to enable selinux if your distribution supports it.
+selinux=true
+
+
+#
+# Configs
+#
+# TODO dictionary of configs and where they go
+# will need a dictionary 'configs' with name and dest. These files will need to be placed in the configs role
+ 
+#
+# Manjaro packages 
+# An example of how package names may differ by distribution. Simply uncomment the list for the distro you're installing
+#packages=["fish", "firewalld", "python-firewall", "libselinux-python", "git", "virt-manager", "tmux", "vim", "powertop", "yaourt"]

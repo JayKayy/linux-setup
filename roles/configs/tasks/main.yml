@@ -1,7 +1,9 @@
 ---
 
-  - name: "Configure .zshrc"
+  - name: "Distribute specified configuration files"
     copy:
-      src: zshrc
-      dest: /home/{{ username }}/.zshrc
-    when: shell == 'zsh'
+      src: "{{ item.file }}"
+      dest: "{{ item.dest }}"
+    with_items:
+      - "{{ configs }}"
+
