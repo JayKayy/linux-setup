@@ -1,2 +1,2 @@
 # fedora-setup
-ansible role for setting up new laptop
+Ansible automation for configuring Linux desktops
