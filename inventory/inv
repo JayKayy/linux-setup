@@ -19,7 +19,7 @@ username=userA
 # Shell
 # Which Shell to use. Ensure the shell is installed in packages list.
 #
-shell=fish
+shell=bash
 
 # 
 # External Packages
@@ -27,13 +27,14 @@ shell=fish
 # These are a list of URL's to packages that are external to the
 # distribution's repositories and will be downloaded and installed.
 #
-external_packages=["https://downloads.vivaldi.com/stable/vivaldi-stable-1.14.1077.60-1.x86_64.rpm"]
+# Ex: external_packages=["https://downloads.vivaldi.com/stable/vivaldi-stable-1.14.1077.60-1.x86_64.rpm"]
+external_packages=[]
 
 #
 # Packages
 # A list of packages to install from configured repositories.
 #
-packages=["fish", "python2-dnf", "firewalld", "python3-firewall", "libselinux-python", "spotify-client", "git", "virt-manager", "drpm", "tmux", "vim", "powertop"]
+packages=["python2-dnf", "firewalld", "python3-firewall", "libselinux-python", "spotify-client", "steam", "git", "virt-manager", "qemu-kvm", "drpm", "tmux", "vim", "powertop", "weechat"]
 
 # 
 # Repositories
@@ -45,14 +46,14 @@ repos=["http://negativo17.org/repos/fedora-spotify.repo", "http://negativo17.org
 # Whether to enable selinux if your distribution supports it.
 selinux=true
 
-
 #
 # Configs
 #
 # TODO dictionary of configs and where they go
 # will need a dictionary 'configs' with name and dest. These files will need to be placed in the configs role
+# examples: .vimrc, .bashrc, .bash_profile,
  
 #
-# Manjaro packages 
+# Manjaro packages(WARN: Will no longer develop for Arch based distributions)
 # An example of how package names may differ by distribution. Simply uncomment the list for the distro you're installing
 #packages=["fish", "firewalld", "python-firewall", "libselinux-python", "git", "virt-manager", "tmux", "vim", "powertop", "yaourt"]
