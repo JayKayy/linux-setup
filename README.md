@@ -10,4 +10,4 @@ Next, modify `inventory/group_vars/install.yml` file with the desired configurat
 
 Once the variables are set run the setup playbook:
 
-`ansible-playbook -i inventory/inv playbooks/setup.yml`
+`ansible-playbook -i inventory/hosts playbooks/setup.yml`
