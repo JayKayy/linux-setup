@@ -7,7 +7,7 @@
     - role: packages
       when: packages is defined
     - role: security
-      when: selinux
+      when: selinux | bool
     - role: shell
       when: shell is defined
     - role: user
@@ -16,3 +16,7 @@
       when: external_packages is defined
     - role: configs
       when: configs is defined
+    - role: fonts
+      when: fonts is defined
+    - role: update
+      when: system_upgrade | default('false') | bool
