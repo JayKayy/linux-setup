@@ -1,9 +1,14 @@
 ---
+  - name: "Adding repo via rpm"
+    dnf:
+      state: present
+      name: "{{ item }}"
+    when: "'.rpm' in item"
 
-  - name: "Adding repos"
+  - name: "Adding repo urls"
     command: "dnf config-manager --add-repo={{ item }}"
     args:
       warn: false
-    with_items:
-      - "{{ repos }}"
+    when: "'http' in item"
+
 

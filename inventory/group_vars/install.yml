@@ -10,7 +10,7 @@
 # User 
 # User name of a single user to create.
 #
-username: jk
+username: userA
 
 # 
 # Shell
@@ -48,7 +48,6 @@ packages:
  - "vim"
  - "powertop"
  - "weechat"
-
 system_upgrade: no
 
 
@@ -57,7 +56,9 @@ system_upgrade: no
 # Additional repositories to enable.
 repos:
  - "http://negativo17.org/repos/fedora-spotify.repo"
- - "http://negativo17.org/repos/fedora-steam.repo"
+ - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-28.noarch.rpm"
+ - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-28.noarch.rpm" 
+
 
 # 
 # Security
