@@ -74,8 +74,7 @@ configs:
   - file: bashrc
     dest: /home/{{ username }}/.bashrc
   - file: bash_profile
-    dest: /home/{{ username }}/.bash_profile                                                                                                                                                                   
-                                                       
+    dest: /home/{{ username }}/.bash_profile
  
 # 
 # Fonts
