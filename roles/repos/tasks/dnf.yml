@@ -4,11 +4,12 @@
       state: present
       name: "{{ item }}"
     when: "'.rpm' in item"
+    register: rpm
 
   - name: "Adding repo urls"
     command: "dnf config-manager --add-repo={{ item }}"
     args:
       warn: false
-    when: "'http' in item"
+    when: "'http' in item and rpm is skipped"
 
 

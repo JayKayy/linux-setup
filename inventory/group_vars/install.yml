@@ -49,7 +49,8 @@ packages:
  - "powertop"
  - "weechat"
  - "lutris"
-system_upgrade: no
+ - "discord"
+system_upgrade: yes
 
 
 # 
