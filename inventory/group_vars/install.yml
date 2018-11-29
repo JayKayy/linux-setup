@@ -50,6 +50,9 @@ packages:
  - "weechat"
  - "lutris"
  - "discord"
+ - "tweaks"
+ - "mutt"
+ - "docker"
 system_upgrade: yes
 
 
@@ -58,9 +61,9 @@ system_upgrade: yes
 # Additional repositories to enable.
 repos:
  - "http://negativo17.org/repos/fedora-spotify.repo"
- - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-28.noarch.rpm"
- - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-28.noarch.rpm" 
- - "https://download.opensuse.org/repositories/home:strycore/Fedora_28/home:strycore.repo"
+ - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-29.noarch.rpm"
+ - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-29.noarch.rpm" 
+ - "https://download.opensuse.org/repositories/home:strycore/Fedora_29/home:strycore.repo"
 
 
 # 
@@ -79,6 +82,12 @@ configs:
   - file: bash_profile
     dest: /home/{{ username }}/.bash_profile
  
+dconf_settings:
+  - key: "org/gnome/Terminal/Legacy/Settings/confirm-close"
+    value: "false"
+  - key: "org/gnome/settings-daemon/peripherals/mouse/middle-button-enabled"
+    value: "false"
+
 # 
 # Fonts
 # Install fonts not a part of default repositories.

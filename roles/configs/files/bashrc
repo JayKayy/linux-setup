@@ -13,4 +13,5 @@ RESET="\[$(tput sgr0)\]"
 # User specific aliases and functions
 export PS1="${GREEN}\u@\h \w\n$ ${RESET}"
 alias ..="cd .."
+alias vi="vim"
 

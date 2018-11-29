@@ -1,7 +1,5 @@
 ---
 
-# Looking to less bulky alternative. Really only need zsh completion
-# Found fish
   - name: "Install shell"
     package: 
       name: "{{ shell }}"
@@ -17,7 +15,7 @@
       dest: /tmp/zsh_install.sh
     when: shell == 'zsh'
 
-#    This will prompt and break
+# This will prompt and break
   - name: "Install OhMyZsh"
     command: /tmp/zsh_install.sh
     when: shell == 'zsh'

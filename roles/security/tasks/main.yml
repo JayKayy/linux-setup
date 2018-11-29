@@ -1,11 +1,15 @@
 ---
 
+  - name: "Ensure firewalld is installed"
+    package:
+      name: firewalld
+      state: present
+
   - name: "Enable firewalld"
     service:
       state: started
       enabled: yes
       name: firewalld
-
 
   - name: "Enable SElinux"
     selinux:
