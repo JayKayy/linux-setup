@@ -1,0 +1,10 @@
+---
+
+# Issue with dconf module requirements
+  - name: "Modify dconf settings"
+    dconf:
+      key: "{{ item.key }}"
+      value: "{{ item.value }}"
+    loop: "{{ dconf_settings }}"
+    when: dconf_settings is defined
+ 

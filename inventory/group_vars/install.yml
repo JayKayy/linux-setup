@@ -4,7 +4,7 @@
 # 
 # Don't SSH configuring localhost
 # Comment this line below if configuring via ssh
-#ansible_connection: local
+ansible_connection: local
 
 #
 # User 
@@ -34,10 +34,6 @@ shell: bash
 # Set 'system_upgrade' to yes|true to upgrade all packages.
 #
 packages:
- - "python2-dnf"
- - "firewalld"
- - "python3-firewall"
- - "libselinux-python"
  - "spotify-client"
  - "steam"
  - "git"
@@ -48,9 +44,8 @@ packages:
  - "vim"
  - "powertop"
  - "weechat"
- - "lutris"
  - "discord"
- - "tweaks"
+ - "gnome-tweaks"
  - "mutt"
  - "docker"
 system_upgrade: yes
@@ -63,7 +58,6 @@ repos:
  - "http://negativo17.org/repos/fedora-spotify.repo"
  - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-29.noarch.rpm"
  - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-29.noarch.rpm" 
- - "https://download.opensuse.org/repositories/home:strycore/Fedora_29/home:strycore.repo"
 
 
 # 
@@ -71,21 +65,22 @@ repos:
 # Whether to enable selinux.(If supported by your distribution.)
 selinux: yes
 
+
 #
 # Configs
-# Place your desired configurations in the 'roles/configs/files' directory
+# Place your desired configurations in the 'roles/configs/templates' directory
 # then populate the 'configs' variable below.
 # examples: .vimrc, .bashrc, .bash_profile,
 configs:
-  - file: bashrc
+  - template: bashrc
     dest: /home/{{ username }}/.bashrc
-  - file: bash_profile
+  - template: bash_profile
     dest: /home/{{ username }}/.bash_profile
  
 dconf_settings:
-  - key: "org/gnome/Terminal/Legacy/Settings/confirm-close"
+  - key: "/org/gnome/Terminal/Legacy/Settings/confirm-close"
     value: "false"
-  - key: "org/gnome/settings-daemon/peripherals/mouse/middle-button-enabled"
+  - key: "/org/gnome/settings-daemon/peripherals/mouse/middle-button-enabled"
     value: "false"
 
 # 
