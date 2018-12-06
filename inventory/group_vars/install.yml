@@ -34,6 +34,7 @@ shell: bash
 # Set 'system_upgrade' to yes|true to upgrade all packages.
 #
 packages:
+ - "ffmpeg" # For netflix compatibility
  - "spotify-client"
  - "steam"
  - "git"
