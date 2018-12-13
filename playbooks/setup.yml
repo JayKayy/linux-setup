@@ -47,4 +47,13 @@
       regexp: 'retry_files_enabled'
       line: 'retry_files_enabled = False'
 
+  - name: "Remove some default home directories"
+    file:
+      path: "/home/{{ username }}/{{ item }}"
+      state: absent
+    loop:
+      - "Music"
+      - "Public"
+      - "Videos"
+
 
