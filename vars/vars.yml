@@ -4,7 +4,7 @@
 # 
 # Don't SSH configuring localhost
 # Comment this line below if configuring via ssh
-ansible_connection: local
+#ansible_connection: local
 
 #
 # User 
@@ -51,6 +51,7 @@ packages:
  - "gnome-tweaks"
  - "mutt"
  - "docker"
+ - "kubernetes-client"
 system_upgrade: yes
 
 #
@@ -69,10 +70,10 @@ flatpaks:
 # 
 # Repositories
 # Additional repositories to enable.
-#repos:
+repos:
 # - "http://negativo17.org/repos/fedora-spotify.repo"
-# - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-29.noarch.rpm"
-# - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-29.noarch.rpm" 
+ - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-29.noarch.rpm"
+ - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-29.noarch.rpm" 
 
 
 # 

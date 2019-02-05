@@ -1,6 +1,8 @@
 ---
 - hosts: install
   become: yes
+  vars_files:
+    - vars/vars.yml
   roles:
     - role: repos
       when: repos is defined
@@ -20,8 +22,8 @@
       when: configs is defined
     - role: fonts
       when: fonts is defined
-    - role: dconf
-      when: dconf_settings is defined
+      #    - role: dconf
+      #      when: dconf_settings is defined
     - role: update
       when: system_upgrade | default('false') | bool
   tasks:
