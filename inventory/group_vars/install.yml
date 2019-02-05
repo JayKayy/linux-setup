@@ -4,7 +4,7 @@
 # 
 # Don't SSH configuring localhost
 # Comment this line below if configuring via ssh
-#ansible_connection: local
+ansible_connection: local
 
 #
 # User 
@@ -38,6 +38,7 @@ packages:
  - "firewalld"
  - "python3-firewall"
  - "libselinux-python"
+ - "ffmpeg" # For netflix compatibility
  - "git"
  - "virt-manager"
  - "qemu-kvm"
@@ -47,6 +48,7 @@ packages:
  - "powertop"
  - "weechat"
  - "libcxx"
+ - "gnome-tweaks"
  - "mutt"
  - "docker"
 system_upgrade: yes
@@ -78,21 +80,22 @@ flatpaks:
 # Whether to enable selinux.(If supported by your distribution.)
 selinux: yes
 
+
 #
 # Configs
-# Place your desired configurations in the 'roles/configs/files' directory
+# Place your desired configurations in the 'roles/configs/templates' directory
 # then populate the 'configs' variable below.
 # examples: .vimrc, .bashrc, .bash_profile,
 configs:
-  - file: bashrc
+  - template: bashrc
     dest: /home/{{ username }}/.bashrc
-  - file: bash_profile
+  - template: bash_profile
     dest: /home/{{ username }}/.bash_profile
  
 dconf_settings:
-  - key: "org/gnome/Terminal/Legacy/Settings/confirm-close"
+  - key: "/org/gnome/Terminal/Legacy/Settings/confirm-close"
     value: "false"
-  - key: "org/gnome/settings-daemon/peripherals/mouse/middle-button-enabled"
+  - key: "/org/gnome/settings-daemon/peripherals/mouse/middle-button-enabled"
     value: "false"
 
 # 

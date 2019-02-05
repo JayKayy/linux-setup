@@ -1,5 +1,17 @@
 ---
 
+  - name: "Install ansible module dependencies"
+    package:
+      name: "{{ item }}"
+      state: present
+    loop:
+      - "python2-psutil"
+      - "python2-dnf"
+      - "firewalld"
+      - "python3-firewall"
+      - "libselinux-python"
+
+
 
   - name: "Installing packages"
     package:

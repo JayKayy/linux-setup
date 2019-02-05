@@ -1,25 +1,9 @@
 ---
 
-  - name: "Distribute specified configuration files"
+  - name: "Template and distribute specified configuration files"
     template:
       src: "{{ item.template }}"
       dest: "{{ item.dest }}"
     with_items:
       - "{{ configs }}"
-
-###
-# Adding custom settings
-###
-   - name: "Configure ignore-case auto completion"
-     lineinfile:
-       path: /etc/inputrc
-       state: present
-       regexp: "^set completion-ignore-case"
-       line: "set completion-ignore-case on"
-
-   - name: "Enable Night Light"
-     dconf:
-       key: "{{ item.key }}"
-       value: "{{ item.value }}"
-     loop: "{{ dconf_settings }}"
-
+    when: configs is defined

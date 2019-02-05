@@ -9,9 +9,9 @@
     - role: flatpak
       when: flatpak_remotes is defined or flatpaks is defined
     - role: security
-      when: selinux | bool
+      when: selinux | default('true') | bool
     - role: shell
-      when: shell is defined
+      when: shell is defined and username is defined
     - role: user
       when: username is defined
     - role: external_packages
@@ -20,5 +20,42 @@
       when: configs is defined
     - role: fonts
       when: fonts is defined
+    - role: dconf
+      when: dconf_settings is defined
     - role: update
       when: system_upgrade | default('false') | bool
+  tasks:
+###
+# Add custom tasks here. These will be run after the roles above.
+###
+  - name: "Configure ignore-case auto completion"
+    lineinfile:
+      path: /etc/inputrc
+      state: present
+      regexp: "^set completion-ignore-case"
+      line: "set completion-ignore-case on"
+
+  - name: "Enable passwordless sudo for wheel group"
+    lineinfile:
+      path: /etc/sudoers
+      state: present
+      regexp: "^%wheel"
+      line: "%wheel  ALL=(ALL)       NOPASSWD: ALL"
+
+  - name: "Disable ansible retry files"
+    lineinfile:
+      state: present
+      path: /etc/ansible/ansible.cfg
+      regexp: 'retry_files_enabled'
+      line: 'retry_files_enabled = False'
+
+  - name: "Remove some default home directories"
+    file:
+      path: "/home/{{ username }}/{{ item }}"
+      state: absent
+    loop:
+      - "Music"
+      - "Public"
+      - "Videos"
+
+
