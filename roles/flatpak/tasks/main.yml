@@ -1,0 +1,22 @@
+---
+
+ - name: "Install flathub remotes"
+   flatpak_remote:
+     name: flathub
+     state: present
+     flatpakrepo_url: "{{ item }}"
+     method: system
+   when: flatpak_remotes is defined
+# Updating this to loop breaks the command for some reason. keeping at with_items
+   with_items:
+     - "{{ flatpak_remotes }}"
+
+
+ - name: "Install flatpaks"
+   flatpak:
+     name: "{{ item }}"
+     state: present
+     method: system
+   when: flatpaks is defined
+   with_items: 
+     - "{{ flatpaks }}"

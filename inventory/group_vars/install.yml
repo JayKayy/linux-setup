@@ -26,7 +26,7 @@ shell: bash
 #
 # Ex: external_packages:
 #       - "https://downloads.vivaldi.com/stable/vivaldi-stable-1.14.1077.60-1.x86_64.rpm"
-# external_packages: ""
+#external_packages: "https://dl.discordapp.net/apps/linux/0.0.8/discord-0.0.8.tar.gz"
 
 #
 # Packages
@@ -38,8 +38,6 @@ packages:
  - "firewalld"
  - "python3-firewall"
  - "libselinux-python"
- - "spotify-client"
- - "steam"
  - "git"
  - "virt-manager"
  - "qemu-kvm"
@@ -48,22 +46,31 @@ packages:
  - "vim"
  - "powertop"
  - "weechat"
- - "lutris"
- - "discord"
- - "tweaks"
+ - "libcxx"
  - "mutt"
  - "docker"
 system_upgrade: yes
 
+#
+# Flatpaks
+# Add flatpak remotes and install flatpak applications
+#
+flatpak_remotes: 
+ - "https://dl.flathub.org/repo/flathub.flatpakrepo"
 
+
+flatpaks:
+ - com.spotify.Client
+ - com.slack.Slack
+ - com.valvesoftware.Steam
+ - com.discordapp.Discord
 # 
 # Repositories
 # Additional repositories to enable.
-repos:
- - "http://negativo17.org/repos/fedora-spotify.repo"
- - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-29.noarch.rpm"
- - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-29.noarch.rpm" 
- - "https://download.opensuse.org/repositories/home:strycore/Fedora_29/home:strycore.repo"
+#repos:
+# - "http://negativo17.org/repos/fedora-spotify.repo"
+# - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-29.noarch.rpm"
+# - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-29.noarch.rpm" 
 
 
 # 

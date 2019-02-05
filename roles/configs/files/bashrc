@@ -10,6 +10,7 @@ fi
 # export SYSTEMD_PAGER=
 GREEN="\[$(tput setaf 46)\]"
 RESET="\[$(tput sgr0)\]"
+source <(kubectl completion bash)
 # User specific aliases and functions
 export PS1="${GREEN}\u@\h \w\n$ ${RESET}"
 alias ..="cd .."

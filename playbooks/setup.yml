@@ -6,6 +6,8 @@
       when: repos is defined
     - role: packages
       when: packages is defined
+    - role: flatpak
+      when: flatpak_remotes is defined or flatpaks is defined
     - role: security
       when: selinux | bool
     - role: shell
