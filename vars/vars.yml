@@ -52,6 +52,7 @@ packages:
  - "mutt"
  - "docker"
  - "kubernetes-client"
+ - "ansible"
 system_upgrade: yes
 
 #
