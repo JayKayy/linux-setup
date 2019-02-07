@@ -4,7 +4,7 @@
 # 
 # Don't SSH configuring localhost
 # Comment this line below if configuring via ssh
-#ansible_connection: local
+ansible_connection: local
 
 #
 # User 
@@ -62,12 +62,12 @@ system_upgrade: yes
 flatpak_remotes: 
  - "https://dl.flathub.org/repo/flathub.flatpakrepo"
 
-
 flatpaks:
  - com.spotify.Client
  - com.slack.Slack
  - com.valvesoftware.Steam
  - com.discordapp.Discord
+
 # 
 # Repositories
 # Additional repositories to enable.
@@ -94,11 +94,11 @@ configs:
   - template: bash_profile
     dest: /home/{{ username }}/.bash_profile
  
-dconf_settings:
-  - key: "/org/gnome/Terminal/Legacy/Settings/confirm-close"
-    value: "false"
-  - key: "/org/gnome/settings-daemon/peripherals/mouse/middle-button-enabled"
-    value: "false"
+    #dconf_settings:
+    #  - key: "/org/gnome/Terminal/Legacy/Settings/confirm-close"
+    #    value: "false"
+    #  - key: "/org/gnome/settings-daemon/peripherals/mouse/middle-button-enabled"
+    #    value: "false"
 
 # 
 # Fonts

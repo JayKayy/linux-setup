@@ -11,7 +11,7 @@
     - role: flatpak
       when: flatpak_remotes is defined or flatpaks is defined
     - role: security
-      when: selinux | default('true') | bool
+      when: selinux is defined and selinux | bool
     - role: shell
       when: shell is defined and username is defined
     - role: user
@@ -22,8 +22,8 @@
       when: configs is defined
     - role: fonts
       when: fonts is defined
-      #    - role: dconf
-      #      when: dconf_settings is defined
+    - role: dconf
+      when: dconf_settings is defined
     - role: update
       when: system_upgrade | default('false') | bool
   tasks:
@@ -55,6 +55,7 @@
     file:
       path: "/home/{{ username }}/{{ item }}"
       state: absent
+    when: username is defined
     loop:
       - "Music"
       - "Public"
