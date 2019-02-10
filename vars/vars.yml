@@ -34,10 +34,6 @@ shell: bash
 # Set 'system_upgrade' to yes|true to upgrade all packages.
 #
 packages:
- - "python2-dnf"
- - "firewalld"
- - "python3-firewall"
- - "libselinux-python"
  - "ffmpeg" # For netflix compatibility
  - "git"
  - "virt-manager"
@@ -47,7 +43,6 @@ packages:
  - "vim"
  - "powertop"
  - "weechat"
- - "libcxx"
  - "gnome-tweaks"
  - "mutt"
  - "docker"
