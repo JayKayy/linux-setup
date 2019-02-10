@@ -88,6 +88,8 @@ configs:
     dest: /home/{{ username }}/.bashrc
   - template: bash_profile
     dest: /home/{{ username }}/.bash_profile
+  - template: tmux.conf
+    dest: /home/{{ username }}/.tmux.conf
  
     #dconf_settings:
     #  - key: "/org/gnome/Terminal/Legacy/Settings/confirm-close"
