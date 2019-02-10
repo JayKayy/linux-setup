@@ -6,17 +6,20 @@
 # Comment this line below if configuring via ssh
 ansible_connection: local
 
+
 #
 # User 
 # User name of a single user to create.
 #
 username: userA
 
+
 # 
 # Shell
 # Which Shell to use. Ensure the shell is installed in packages list.
 #
 shell: bash
+
 
 # 
 # External Packages
@@ -27,6 +30,7 @@ shell: bash
 # Ex: external_packages:
 #       - "https://downloads.vivaldi.com/stable/vivaldi-stable-1.14.1077.60-1.x86_64.rpm"
 #external_packages: "https://dl.discordapp.net/apps/linux/0.0.8/discord-0.0.8.tar.gz"
+
 
 #
 # Packages
@@ -50,6 +54,7 @@ packages:
  - "ansible"
 system_upgrade: yes
 
+
 #
 # Flatpaks
 # Add flatpak remotes and install flatpak applications
@@ -63,13 +68,14 @@ flatpaks:
  - com.valvesoftware.Steam
  - com.discordapp.Discord
 
+
 # 
 # Repositories
 # Additional repositories to enable.
 repos:
 # - "http://negativo17.org/repos/fedora-spotify.repo"
+# - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-29.noarch.rpm" 
  - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-29.noarch.rpm"
- - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-29.noarch.rpm" 
 
 
 # 
@@ -91,11 +97,12 @@ configs:
   - template: tmux.conf
     dest: /home/{{ username }}/.tmux.conf
  
-    #dconf_settings:
-    #  - key: "/org/gnome/Terminal/Legacy/Settings/confirm-close"
-    #    value: "false"
-    #  - key: "/org/gnome/settings-daemon/peripherals/mouse/middle-button-enabled"
-    #    value: "false"
+
+#dconf_settings:
+#  - key: "/org/gnome/Terminal/Legacy/Settings/confirm-close"
+#    value: "false"
+#  - key: "/org/gnome/settings-daemon/peripherals/mouse/middle-button-enabled"
+#    value: "false"
 
 # 
 # Fonts
@@ -105,6 +112,3 @@ fonts:
   - "https://assets.ubuntu.com/v1/fad7939b-ubuntu-font-family-0.83.zip"
 
 
-# Manjaro packages(WARN: Will no longer develop for Arch based distributions)
-# An example of how package names may differ by distribution. Simply uncomment the list for the distro you're installing
-#packages=["fish", "firewalld", "python-firewall", "libselinux-python", "git", "virt-manager", "tmux", "vim", "powertop", "yaourt"]
