@@ -52,6 +52,7 @@ packages:
  - "docker"
  - "kubernetes-client"
  - "ansible"
+ - "feedreader"
 system_upgrade: yes
 
 
