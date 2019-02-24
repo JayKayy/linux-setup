@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+<head>
+	<title>FeedReader Exported RSS Feeds</title>
+</head>
+<body>
+	<outline title="Kubernetes – Production-Grade Container Orchestration" text="Kubernetes – Production-Grade Container Orchestration" type="rss" htmlUrl="https://kubernetes.io/" xmlUrl="https://kubernetes.io/feed.xml"/>
+	<outline title="Heptio - Medium" text="Heptio - Medium" type="rss" htmlUrl="https://blog.heptio.com?source=rss----7d24bed16a19---4" xmlUrl="https://blog.heptio.com/feed"/>
+	<outline title="LWN.net" text="LWN.net" type="rss" htmlUrl="https://lwn.net" xmlUrl="https://lwn.net/headlines/rss"/>
+	<outline title="LinuxInsider" text="LinuxInsider" type="rss" htmlUrl="http://www.linuxinsider.com" xmlUrl="https://www.linuxinsider.com/perl/syndication/rssfull.pl"/>
+	<outline title="BBC News - World" text="BBC News - World" type="rss" htmlUrl="https://www.bbc.co.uk/news/" xmlUrl="http://feeds.bbci.co.uk/news/world/rss.xml"/>
+	<outline title="Opensource.com" text="Opensource.com" type="rss" htmlUrl="https://opensource.com/frontpage" xmlUrl="https://opensource.com/feed"/>
+	</body>
+</opml>

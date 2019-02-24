@@ -2,7 +2,7 @@
 # to move/recreate the current feed configuration
 
 import sqlite3
-DB_PATH="/home/USERNAME/.local/share/feedreader/data/feedreader-7.db"
+DB_PATH="/home/<user>/.local/share/feedreader/data/feedreader-7.db"
 print("Using database: {}".format(DB_PATH))
 db=sqlite3.connect(DB_PATH)
 cursor = db.cursor()
