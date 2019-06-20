@@ -97,7 +97,8 @@ configs:
     dest: /home/{{ username }}/.bash_profile
   - template: tmux.conf
     dest: /home/{{ username }}/.tmux.conf
- 
+  - template: vimrc
+    dest: /home/{{ username }}/.vimrc
 
 #dconf_settings:
 #  - key: "/org/gnome/Terminal/Legacy/Settings/confirm-close"
