@@ -1,21 +1,35 @@
-" Specify a directory for plugins
-" - For Neovim: ~/.local/share/nvim/plugged
-" - Avoid using standard Vim directory names like 'plugin'
-" Disable single move keys
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
+"plugins
 call plug#begin('~/.vim/plugged')
-
-" Make sure you use single quotes
-
-" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-Plug 'junegunn/vim-easy-align'
-
-" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
-Plug 'fatih/vim-go', { 'tag': '*' }
-
-
-" Initialize plugin system
+Plug 'sheerun/vim-polyglot'
 call plug#end()
+
+"visual
+syntax enable
+syntax on
+set background=dark
+
+"search
+set ignorecase "case insensitive
+set smartcase  "use case if any caps used
+set incsearch  "show match as search proceeds
+
+"indent
+set autoindent
+
+"ignore
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.o
+
+
+"temp files
+set nobackup
+set nowritebackup
+set noswapfile
+
+"tab sizes
+set tabstop=4
+
+"Disable arrows
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
