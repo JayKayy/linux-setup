@@ -1,6 +1,6 @@
 ---
 
-  - name: "Install ansible module dependencies"
+  - name: "Install ansible module dependencies family"
     package:
       name: "{{ item }}"
       state: present
@@ -10,8 +10,16 @@
       - "firewalld"
       - "python3-firewall"
       - "libselinux-python"
+    when: ansible_os_family == 'RedHat'
 
-
+  - name: "Install ansible module dependencies Debian family"
+    package:
+      name: "{{ item }}"
+      state: present
+    loop:
+      - "python-apt"
+      - "python3-apt"
+    when: ansible_os_family == 'Debian'
 
   - name: "Installing packages"
     package:

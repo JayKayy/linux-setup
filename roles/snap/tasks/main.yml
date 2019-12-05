@@ -1,0 +1,8 @@
+---
+
+ - name: "Install Snaps"
+   snap:
+     name: "{{ item }}"
+   when: snaps is defined
+   with_items: 
+     - "{{ snaps }}"
