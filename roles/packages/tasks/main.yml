@@ -1,6 +1,6 @@
 ---
 
-  - name: "Install ansible module dependencies family"
+  - name: "Install ansible module dependencies (Red Hat family)"
     package:
       name: "{{ item }}"
       state: present
@@ -12,7 +12,7 @@
       - "libselinux-python"
     when: ansible_os_family == 'RedHat'
 
-  - name: "Install ansible module dependencies Debian family"
+  - name: "Install ansible module dependencies (Debian family)"
     package:
       name: "{{ item }}"
       state: present

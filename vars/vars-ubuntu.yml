@@ -4,14 +4,14 @@
 # 
 # Don't SSH configuring localhost
 # Comment this line below if configuring via ssh
-ansible_connection: local
+#ansible_connection: local
 
 
 #
 # User 
 # User name of a single user to create.
 #
-username: userA
+username: usera
 
 
 # 
@@ -41,9 +41,11 @@ packages:
  - "git"
  - "vim"
  - "gnome-tweaks"
- - "libcanberra-gtk-module"
- - "libgtk2.0"
- - "autokey-gtk"
+ - "virtualbox"
+ - "virtualbox-guest-additions-iso"
+ - "virtualbox-guest-additions-iso"
+ - "curl"
+ - "curl"
 system_upgrade: yes
 
 
@@ -68,20 +70,23 @@ snaps:
  - discord
  - docker
  - firefox
+ - mgba
+ - signal-desktop
+ - spotify
+
+# Snaps that require the --classic install method
+snaps_classic:
+ - slack
  - go
  - helm
  - kubectl
- - mgba
- - signal-desktop
- - slack
- - spotify
  - doctl
-
+#- transmission
 
 # 
 # Repositories
 # Additional repositories to enable.
-repos:
+#repos:
 # - "http://negativo17.org/repos/fedora-spotify.repo"
 # - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-29.noarch.rpm" 
 # - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-29.noarch.rpm"
@@ -90,7 +95,7 @@ repos:
 # 
 # Security
 # Whether to enable selinux.(If supported by your distribution.)
-selinux: yes
+#selinux: yes
 
 
 #
@@ -98,7 +103,7 @@ selinux: yes
 # Place your desired configurations in the 'roles/configs/templates' directory
 # then populate the 'configs' variable below.
 # examples: .vimrc, .bashrc, .bash_profile,
-configs:
+#configs:
     #  - template: bashrc
     #    dest: /home/{{ username }}/.bashrc
     #  - template: bash_profile
@@ -118,7 +123,7 @@ configs:
 # Fonts
 # Install fonts not a part of default repositories.
 # If fonts are distributed via the default repositories, add the font package name to the `packages` variable above.
-fonts:
+#fonts:
     #  - "https://assets.ubuntu.com/v1/fad7939b-ubuntu-font-family-0.83.zip"
 
 

@@ -6,11 +6,20 @@
     register: shell_path
     changed_when: false
 
-  - name: "Create user"
+  - name: "Create user (Red Hat family)"
     user:
       name: "{{ username }}"
       groups: wheel
       append: yes
       shell: "{{ shell_path.stdout }}"
       home: "/home/{{ username }}"
+    when: ansible_os_family == 'RedHat'
 
+  - name: "Create user (Debian family)"
+    user:
+      name: "{{ username }}"
+      groups: sudo
+      append: yes
+      shell: "{{ shell_path.stdout }}"
+      home: "/home/{{ username }}"
+    when: ansible_os_family == 'Debian'

@@ -3,6 +3,15 @@
  - name: "Install Snaps"
    snap:
      name: "{{ item }}"
+     #     classic: yes
    when: snaps is defined
    with_items: 
      - "{{ snaps }}"
+
+ - name: "Install Snaps that require --classic"
+   snap:
+     name: "{{ item }}"
+     classic: yes
+   when: snaps_classic is defined
+   with_items: 
+     - "{{ snaps_classic }}"

@@ -10,6 +10,8 @@
       when: packages is defined
     - role: flatpak
       when: flatpak_remotes is defined or flatpaks is defined
+    - role: snap
+      when: snaps is defined or snaps_classic is defined
     - role: security
       when: selinux is defined and selinux | bool
     - role: shell
@@ -37,28 +39,10 @@
       regexp: "^set completion-ignore-case"
       line: "set completion-ignore-case on"
 
-  - name: "Enable passwordless sudo for wheel group"
+  - name: "Enable passwordless sudo for {{ username }}"
     lineinfile:
       path: /etc/sudoers
       state: present
-      regexp: "^%wheel"
-      line: "%wheel  ALL=(ALL)       NOPASSWD: ALL"
-
-  - name: "Disable ansible retry files"
-    lineinfile:
-      state: present
-      path: /etc/ansible/ansible.cfg
-      regexp: 'retry_files_enabled'
-      line: 'retry_files_enabled = False'
-
-  - name: "Remove some default home directories"
-    file:
-      path: "/home/{{ username }}/{{ item }}"
-      state: absent
-    when: username is defined
-    loop:
-      - "Music"
-      - "Public"
-      - "Videos"
-
+      regexp: "^{{ username }}"
+      line: "{{ username }}         ALL=(ALL) NOPASSWD:ALL"
 
