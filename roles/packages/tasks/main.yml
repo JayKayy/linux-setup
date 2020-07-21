@@ -5,13 +5,11 @@
       name: "{{ item }}"
       state: present
     loop:
-      - "python2-psutil"
-      - "python2-dnf"
+      - "python3-psutil"
+      - "python3-dnf"
       - "firewalld"
       - "python3-firewall"
-      - "libselinux-python"
-
-
+      - "python3-libselinux"
 
   - name: "Installing packages"
     package:
