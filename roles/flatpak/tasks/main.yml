@@ -1,5 +1,10 @@
 ---
 
+ - name: "Install flatpak"
+   package:
+     name: flatpak
+     state: present
+
  - name: "Install flathub remotes"
    flatpak_remote:
      name: flathub
@@ -10,7 +15,6 @@
 # Updating this to loop breaks the command for some reason. keeping at with_items
    with_items:
      - "{{ flatpak_remotes }}"
-
 
  - name: "Install flatpaks"
    flatpak:
