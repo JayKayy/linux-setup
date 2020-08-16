@@ -8,12 +8,10 @@ fi
 #Uncomment the following line if you don't like systemctl's auto-paging feature:
 
 # export SYSTEMD_PAGER=
-GREEN="\[$(tput setaf 46)\]"
-BLUE="\[$(tput setaf 39)\]"
+GREEN="\[$(tput setaf 49)\]"
 RESET="\[$(tput sgr0)\]"
 # User specific aliases and functions
-export PS1="${BLUE}\u@\h \w\n$ ${RESET}"
+export PS1="${GREEN}\u${RESET}@\h:\W\n${RESET}> "
 alias ..="cd .."
 alias vi="vim"
-source <(kubectl completion bash)
 

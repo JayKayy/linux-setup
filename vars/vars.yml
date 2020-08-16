@@ -18,7 +18,7 @@ username: userA
 # Shell
 # Which Shell to use. Ensure the shell is installed in packages list.
 #
-shell: bash
+shell: zsh
 
 
 # 
@@ -40,19 +40,17 @@ shell: bash
 packages:
  - "ffmpeg" # For netflix compatibility
  - "git"
- - "virt-manager"
- - "qemu-kvm"
  - "drpm"
  - "tmux"
  - "vim"
  - "powertop"
- - "weechat"
- - "gnome-tweaks"
- - "mutt"
- - "docker"
  - "kubernetes-client"
  - "ansible"
- - "feedreader"
+ - "bash-completion"
+ - "zsh"
+ - "golang"
+ - "podman"
+ - "toolbox"
 system_upgrade: yes
 
 
@@ -66,9 +64,10 @@ flatpak_remotes:
 flatpaks:
  - com.spotify.Client
  - com.slack.Slack
- - com.valvesoftware.Steam
- - com.discordapp.Discord
-
+ - im.riot.Riot # Element.io
+ - org.signal.Signal
+ - info.mumble.Mumble
+ 
 
 # 
 # Repositories
@@ -76,7 +75,7 @@ flatpaks:
 repos:
 # - "http://negativo17.org/repos/fedora-spotify.repo"
 # - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-29.noarch.rpm" 
- - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-29.noarch.rpm"
+ - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-32.noarch.rpm"
 
 
 # 
@@ -110,7 +109,7 @@ configs:
 # Fonts
 # Install fonts not a part of default repositories.
 # If fonts are distributed via the default repositories, add the font package name to the `packages` variable above.
-fonts:
-  - "https://assets.ubuntu.com/v1/fad7939b-ubuntu-font-family-0.83.zip"
+#fonts:
+#  - "https://assets.ubuntu.com/v1/fad7939b-ubuntu-font-family-0.83.zip"
 
 
