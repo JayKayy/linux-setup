@@ -59,10 +59,10 @@ flatpak_remotes:
 flatpaks:
  - com.spotify.Client
  - com.slack.Slack
+ - im.riot.Riot # Element.io
  - org.signal.Signal
- - us.zoom.Zoom
-
-
+ - info.mumble.Mumble
+ 
 # 
 # Repositories
 # Additional repositories to enable.

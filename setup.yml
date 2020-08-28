@@ -61,4 +61,10 @@
       - "Public"
       - "Videos"
 
-
+  - name: "Create some default home directories"
+    file:
+      path: "/home/{{ username }}/{{ item }}"
+      state: directory
+    when: username is defined
+    loop:
+      - "Development"

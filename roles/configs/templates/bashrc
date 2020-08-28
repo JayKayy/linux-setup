@@ -4,10 +4,13 @@
 if [ -f /etc/bashrc ]; then
         . /etc/bashrc
 fi
+#Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
 
-export PS1="\[\033[38;5;114m\]\u\[$(tput sgr0)\]@\h:\W\n> \[$(tput sgr0)\]"
+GREEN="\[$(tput setaf 49)\]"
+RESET="\[$(tput sgr0)\]"
 # User specific aliases and functions
+export PS1="${GREEN}\u${RESET}@\h:\W\n${RESET}> "
 alias ..="cd .."
 alias vi="vim"
-alias dovpn="sudo openconnect --protocol=gp https://vpn-nyc3.digitalocean.com/ssl-vpn -u jkwiatkoski "
-source <(kubectl completion bash)
+
