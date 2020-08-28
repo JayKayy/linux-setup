@@ -17,8 +17,10 @@ username: userA
 # 
 # Shell
 # Which Shell to use. Ensure the shell is installed in packages list.
+# Install ohmyzsh if ohmyzsh and shell == zsh
 #
 shell: zsh
+ohmyzsh: true
 
 
 # 
@@ -84,12 +86,12 @@ selinux: yes
 # then populate the 'configs' variable below.
 # examples: .vimrc, .bashrc, .bash_profile,
 configs:
-  - template: tmux.conf
+  - file: tmux.conf
     dest: /home/{{ username }}/.tmux.conf
-  - template: zshrc
+  - file: zshrc
     dest: /home/{{ username }}/.zshrc
-  - template: avit.zsh-theme
-    dest: /home/{{ username }}/.oh-my-zsh/themes/avit.zsh-theme
+  - file: avit.zsh-theme 
+    dest: /home/{{ username }}/.ohmyzsh/themes/
 
 #dconf_settings:
 #  - key: "/org/gnome/Terminal/Legacy/Settings/confirm-close"
