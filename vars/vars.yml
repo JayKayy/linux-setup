@@ -18,7 +18,7 @@ username: userA
 # Shell
 # Which Shell to use. Ensure the shell is installed in packages list.
 #
-shell: bash
+shell: zsh
 
 
 # 
@@ -40,19 +40,12 @@ shell: bash
 packages:
  - "ffmpeg" # For netflix compatibility
  - "git"
- - "virt-manager"
- - "qemu-kvm"
- - "drpm"
  - "tmux"
  - "vim"
- - "powertop"
- - "weechat"
- - "gnome-tweaks"
- - "mutt"
- - "docker"
  - "kubernetes-client"
- - "ansible"
- - "feedreader"
+ - "yakuake"
+ - "toolbox"
+ - "latte-dock"
 system_upgrade: yes
 
 
@@ -66,8 +59,8 @@ flatpak_remotes:
 flatpaks:
  - com.spotify.Client
  - com.slack.Slack
- - com.valvesoftware.Steam
- - com.discordapp.Discord
+ - org.signal.Signal
+ - us.zoom.Zoom
 
 
 # 
@@ -76,7 +69,7 @@ flatpaks:
 repos:
 # - "http://negativo17.org/repos/fedora-spotify.repo"
 # - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-29.noarch.rpm" 
- - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-29.noarch.rpm"
+ - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-32.noarch.rpm"
 
 
 # 
@@ -91,14 +84,12 @@ selinux: yes
 # then populate the 'configs' variable below.
 # examples: .vimrc, .bashrc, .bash_profile,
 configs:
-  - template: bashrc
-    dest: /home/{{ username }}/.bashrc
-  - template: bash_profile
-    dest: /home/{{ username }}/.bash_profile
   - template: tmux.conf
     dest: /home/{{ username }}/.tmux.conf
-  - template: vimrc
-    dest: /home/{{ username }}/.vimrc
+  - template: zshrc
+    dest: /home/{{ username }}/.zshrc
+  - template: avit.zsh-theme
+    dest: /home/{{ username }}/.oh-my-zsh/themes/avit.zsh-theme
 
 #dconf_settings:
 #  - key: "/org/gnome/Terminal/Legacy/Settings/confirm-close"
@@ -110,7 +101,7 @@ configs:
 # Fonts
 # Install fonts not a part of default repositories.
 # If fonts are distributed via the default repositories, add the font package name to the `packages` variable above.
-fonts:
-  - "https://assets.ubuntu.com/v1/fad7939b-ubuntu-font-family-0.83.zip"
+#fonts:
+#  - "https://assets.ubuntu.com/v1/fad7939b-ubuntu-font-family-0.83.zip"
 
 
