@@ -6,7 +6,6 @@
     shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     register: result
     failed_when: result.rc != 0 and not "'You already have Oh My Zsh installed.' in result.stdout"
-    changed_when: result.rc == 0 
     when: shell == 'zsh' and ohmyzsh
 
   - name: "Template and distribute specified configuration files"

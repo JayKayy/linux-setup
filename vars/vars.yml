@@ -91,7 +91,7 @@ configs:
   - file: zshrc
     dest: /home/{{ username }}/.zshrc
   - file: avit.zsh-theme 
-    dest: /home/{{ username }}/.ohmyzsh/themes/
+    dest: /home/{{ username }}/.oh-my-zsh/themes/
 
 #dconf_settings:
 #  - key: "/org/gnome/Terminal/Legacy/Settings/confirm-close"
