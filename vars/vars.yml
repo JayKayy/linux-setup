@@ -90,7 +90,7 @@ configs:
     dest: /home/{{ username }}/.tmux.conf
   - file: zshrc
     dest: /home/{{ username }}/.zshrc
-  - file: avit.zsh-theme 
+  - file: jk.zsh-theme 
     dest: /home/{{ username }}/.oh-my-zsh/themes/
 
 #dconf_settings:
