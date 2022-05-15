@@ -7,7 +7,7 @@
     register: rpm
 
   - name: "Adding repo urls"
-    command: "dnf config-manager --add-repo={{ item }}"
+    command: "dnf config-manager --add-repo={{ item }} --nogpgcheck"
     args:
       warn: false
     when: "'http' in item and rpm is skipped"

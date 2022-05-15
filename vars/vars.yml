@@ -11,7 +11,7 @@ ansible_connection: local
 # User 
 # User name of a single user to create.
 #
-username: userA
+username: jkwiatko
 
 
 # 
@@ -43,11 +43,8 @@ packages:
  - "ffmpeg" # For netflix compatibility
  - "git"
  - "tmux"
- - "vim"
- - "kubernetes-client"
- - "yakuake"
+ - "neovim"
  - "toolbox"
- - "latte-dock"
 system_upgrade: yes
 
 
@@ -60,18 +57,15 @@ flatpak_remotes:
 
 flatpaks:
  - com.spotify.Client
- - com.slack.Slack
  - im.riot.Riot # Element.io
  - org.signal.Signal
- - info.mumble.Mumble
  
 # 
 # Repositories
 # Additional repositories to enable.
-repos:
-# - "http://negativo17.org/repos/fedora-spotify.repo"
+#repos:
 # - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-29.noarch.rpm" 
- - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-32.noarch.rpm"
+# - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-34.noarch.rpm" 
 
 
 # 
@@ -92,6 +86,10 @@ configs:
     dest: /home/{{ username }}/.zshrc
   - file: jk.zsh-theme 
     dest: /home/{{ username }}/.oh-my-zsh/themes/
+  - file: init.vim
+    dest: /home/{{ username }}/.config/nvim/
+  - file: plug.vim
+    dest: ~/home/{{ username }}/.config/nvim/autoload/plug.vim
 
 #dconf_settings:
 #  - key: "/org/gnome/Terminal/Legacy/Settings/confirm-close"
