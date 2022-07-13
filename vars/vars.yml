@@ -40,7 +40,7 @@ ohmyzsh: true
 # Set 'system_upgrade' to yes|true to upgrade all packages.
 #
 packages:
- - "ffmpeg" # For netflix compatibility
+ - "ffmpeg-free" # For netflix compatibility
  - "git"
  - "tmux"
  - "neovim"
@@ -56,16 +56,14 @@ flatpak_remotes:
  - "https://dl.flathub.org/repo/flathub.flatpakrepo"
 
 flatpaks:
- - com.spotify.Client
- - im.riot.Riot # Element.io
  - org.signal.Signal
  
 # 
 # Repositories
 # Additional repositories to enable.
 #repos:
-# - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-29.noarch.rpm" 
-# - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-34.noarch.rpm" 
+# - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-36.noarch.rpm" 
+# - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-36.noarch.rpm" 
 
 
 # 
@@ -89,7 +87,7 @@ configs:
   - file: init.vim
     dest: /home/{{ username }}/.config/nvim/
   - file: plug.vim
-    dest: ~/home/{{ username }}/.config/nvim/autoload/plug.vim
+    dest: /home/{{ username }}/.config/nvim/autoload/plug.vim
 
 #dconf_settings:
 #  - key: "/org/gnome/Terminal/Legacy/Settings/confirm-close"
