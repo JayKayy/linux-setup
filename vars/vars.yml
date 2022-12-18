@@ -40,11 +40,10 @@ ohmyzsh: true
 # Set 'system_upgrade' to yes|true to upgrade all packages.
 #
 packages:
- - "ffmpeg-free" # For netflix compatibility
+ - "ffmpeg-free"
  - "git"
  - "tmux"
  - "neovim"
- - "toolbox"
 system_upgrade: yes
 
 
@@ -77,6 +76,10 @@ selinux: yes
 # Place your desired configurations in the 'roles/configs/templates' directory
 # then populate the 'configs' variable below.
 # examples: .vimrc, .bashrc, .bash_profile,
+config_directories:
+  - /home/{{ username }}/.config/nvim/autoload/
+  - /home/{{ username }}/.kube/
+
 configs:
   - file: tmux.conf
     dest: /home/{{ username }}/.tmux.conf
