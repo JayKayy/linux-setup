@@ -22,6 +22,7 @@
       dest: "{{ item.dest }}"
       owner: "{{ username }}"
       group: "{{ username }}"
+
     with_items:
       - "{{ configs }}"
     when: configs is defined

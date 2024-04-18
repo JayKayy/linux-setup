@@ -42,8 +42,8 @@ ohmyzsh: true
 packages:
  - "ffmpeg-free"
  - "git"
- - "tmux"
  - "neovim"
+ - "kitty"
 system_upgrade: yes
 
 
@@ -64,12 +64,10 @@ flatpaks:
 # - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-36.noarch.rpm" 
 # - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-36.noarch.rpm" 
 
-
 # 
 # Security
 # Whether to enable selinux.(If supported by your distribution.)
 selinux: yes
-
 
 #
 # Configs
@@ -77,20 +75,15 @@ selinux: yes
 # then populate the 'configs' variable below.
 # examples: .vimrc, .bashrc, .bash_profile,
 config_directories:
-  - /home/{{ username }}/.config/nvim/autoload/
   - /home/{{ username }}/.kube/
+  - /home/{{ username }}/.config/kitty
 
 configs:
-  - file: tmux.conf
-    dest: /home/{{ username }}/.tmux.conf
   - file: zshrc
     dest: /home/{{ username }}/.zshrc
-  - file: jk.zsh-theme 
-    dest: /home/{{ username }}/.oh-my-zsh/themes/
-  - file: init.vim
-    dest: /home/{{ username }}/.config/nvim/
-  - file: plug.vim
-    dest: /home/{{ username }}/.config/nvim/autoload/plug.vim
+  - file: kitty.conf
+    dest: /home/{{ username }}/.config/kitty
+
 
 #dconf_settings:
 #  - key: "/org/gnome/Terminal/Legacy/Settings/confirm-close"
