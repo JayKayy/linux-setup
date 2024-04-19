@@ -8,21 +8,11 @@
     failed_when: result.rc != 0 and not "'You already have Oh My Zsh installed.' in result.stdout"
     when: shell == 'zsh' and ohmyzsh
 
-  - name: "Creating necessary directories"
-    ansible.builtin.file:
-      path: "{{ item }}"
-      state: directory
-    with_items: 
-      - "{{ config_directories }}"
-    when: config_directories is defined
-    
-  - name: "Template and distribute specified configuration files"
+  - name: "Copy Configuration files"
     copy:
-      src: "{{ item.file }}"
-      dest: "{{ item.dest }}"
+      src: "{{ item }}"
+      dest: "/home/{{ username }}/.config/"
       owner: "{{ username }}"
       group: "{{ username }}"
-
-    with_items:
-      - "{{ configs }}"
-    when: configs is defined
+    loop:
+       - "{{ lookup('fileglob', 'files/config/*', wantlist=True) }}"
