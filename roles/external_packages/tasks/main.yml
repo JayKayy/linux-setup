@@ -8,7 +8,7 @@
       - "{{ external_packages }}"
 
   - name: "Install external packages"
-    become: yes
+    become: true
     package:
       name: "/tmp/{{ item | urlsplit('path') | basename }}"
       state: present

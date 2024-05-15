@@ -40,10 +40,13 @@ ohmyzsh: true
 # Set 'system_upgrade' to yes|true to upgrade all packages.
 #
 packages:
- - "ffmpeg-free"
- - "git"
- - "neovim"
- - "kitty"
+  - "ffmpeg-free"
+  - "git"
+  - "neovim"
+  - "kitty"
+  - "vim"
+  - "iosevka-fonts"
+  - "zsh"
 system_upgrade: yes
 
 
@@ -52,10 +55,11 @@ system_upgrade: yes
 # Add flatpak remotes and install flatpak applications
 #
 flatpak_remotes: 
- - "https://dl.flathub.org/repo/flathub.flatpakrepo"
+  - "https://dl.flathub.org/repo/flathub.flatpakrepo"
 
 flatpaks:
- - org.signal.Signal
+  - org.signal.Signal
+  - com.discordapp.Discord
  
 # 
 # Repositories
@@ -71,19 +75,9 @@ selinux: yes
 
 #
 # Configs
-# Place your desired configurations in the 'roles/configs/templates' directory
-# then populate the 'configs' variable below.
-# examples: .vimrc, .bashrc, .bash_profile,
-config_directories:
-  - /home/{{ username }}/.kube/
-  - /home/{{ username }}/.config/kitty
-
-configs:
-  - file: zshrc
-    dest: /home/{{ username }}/.zshrc
-  - file: kitty.conf
-    dest: /home/{{ username }}/.config/kitty
-
+# Place your desired configuration directories in the 'roles/configs/files' directory
+# all of these files will be placed in {HOME}/.config.
+# ex: roles/configs/files/kitty/kitty.conf will be placed at $HOME/.config/kitty/kitty.conf
 
 #dconf_settings:
 #  - key: "/org/gnome/Terminal/Legacy/Settings/confirm-close"
@@ -91,7 +85,6 @@ configs:
 #  - key: "/org/gnome/settings-daemon/peripherals/mouse/middle-button-enabled"
 #    value: "false"
 
-# 
 # Fonts
 # Install fonts not a part of default repositories.
 # If fonts are distributed via the default repositories, add the font package name to the `packages` variable above.
