@@ -11,7 +11,7 @@ ansible_connection: local
 # User 
 # User name of a single user to create.
 #
-username: jkwiatko
+username: user
 
 # 
 # Repositories
