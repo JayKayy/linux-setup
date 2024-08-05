@@ -1,9 +1,0 @@
----
-
-  - name: "Adding repos"
-    apt_repository:
-      state: present
-      repo: "{{ repos }} "
-    with_items:
-      - "{{ repos }}"
-

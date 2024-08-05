@@ -1,11 +1,11 @@
 
-# These variables below will apply to all hosts listed under the 'install' group.
+# The variables below will apply to all hosts listed under
+# the 'install' group in the inventory file(default: localhost).
 
 # 
 # Don't SSH configuring localhost
 # Comment this line below if configuring via ssh
 ansible_connection: local
-
 
 #
 # User 
@@ -13,26 +13,12 @@ ansible_connection: local
 #
 username: jkwiatko
 
-
 # 
-# Shell
-# Which Shell to use. Ensure the shell is installed in packages list.
-# Install ohmyzsh if ohmyzsh and shell == zsh
-#
-shell: zsh
-ohmyzsh: true
-
-
-# 
-# External Packages
-#
-# These are a list of URL's to packages that are external to the
-# distribution's repositories and will be downloaded and installed.
-#
-# Ex: external_packages:
-#       - "https://downloads.vivaldi.com/stable/vivaldi-stable-1.14.1077.60-1.x86_64.rpm"
-#external_packages: "https://dl.discordapp.net/apps/linux/0.0.8/discord-0.0.8.tar.gz"
-
+# Repositories
+# Additional repositories to enable.
+repos:
+ - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-40.noarch.rpm"
+ - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-40.noarch.rpm"
 
 #
 # Packages
@@ -40,15 +26,30 @@ ohmyzsh: true
 # Set 'system_upgrade' to yes|true to upgrade all packages.
 #
 packages:
-  - "ffmpeg-free"
+  # development
+  - "ansible"
+  - "chromium"
+  - "curl"
   - "git"
-  - "neovim"
+  - "golang"
+  - "htop"
   - "kitty"
-  - "vim"
-  - "iosevka-fonts"
+  - "kubernetes-client"
+  - "make"
+  - "neovim"
+  - "nodejs"
+  - "nodejs-npm"
+  - "podman"
+  - "wget"
   - "zsh"
+  # multimedia
+  - "ffmpeg-free" 
+  # misc
+  - "vim"
+  - "stow"
+  - "virt-manager"
+  - "neofetch"
 system_upgrade: yes
-
 
 #
 # Flatpaks
@@ -61,34 +62,15 @@ flatpaks:
   - org.signal.Signal
   - com.discordapp.Discord
  
-# 
-# Repositories
-# Additional repositories to enable.
-#repos:
-# - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-36.noarch.rpm" 
-# - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-36.noarch.rpm" 
-
-# 
 # Security
 # Whether to enable selinux.(If supported by your distribution.)
 selinux: yes
 
+# 
+# Shell
+# Which Shell to use. Ensure the shell is installed in packages list.
+# Install ohmyzsh if ohmyzsh and shell == zsh
 #
-# Configs
-# Place your desired configuration directories in the 'roles/configs/files' directory
-# all of these files will be placed in {HOME}/.config.
-# ex: roles/configs/files/kitty/kitty.conf will be placed at $HOME/.config/kitty/kitty.conf
-
-#dconf_settings:
-#  - key: "/org/gnome/Terminal/Legacy/Settings/confirm-close"
-#    value: "false"
-#  - key: "/org/gnome/settings-daemon/peripherals/mouse/middle-button-enabled"
-#    value: "false"
-
-# Fonts
-# Install fonts not a part of default repositories.
-# If fonts are distributed via the default repositories, add the font package name to the `packages` variable above.
-#fonts:
-#  - "https://assets.ubuntu.com/v1/fad7939b-ubuntu-font-family-0.83.zip"
-
+shell: zsh
+ohmyzsh: true
 
