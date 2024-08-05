@@ -1,70 +1,18 @@
 
-# The variables below will apply to all hosts listed under
-# the 'install' group in the inventory file(default: localhost).
+# These variables below will apply to all hosts listed under the 'install' group.
 
 # 
 # Don't SSH configuring localhost
 # Comment this line below if configuring via ssh
 ansible_connection: local
 
+
 #
 # User 
 # User name of a single user to create.
 #
-username: user
+username: jkwiatko
 
-# 
-# Repositories
-# Additional repositories to enable.
-repos:
- - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-40.noarch.rpm"
- - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-40.noarch.rpm"
-
-#
-# Packages
-# A list of packages to install from configured repositories.
-# Set 'system_upgrade' to yes|true to upgrade all packages.
-#
-packages:
-  # development
-  - "ansible"
-  - "chromium"
-  - "curl"
-  - "git"
-  - "golang"
-  - "htop"
-  - "kitty"
-  - "kubernetes-client"
-  - "make"
-  - "neovim"
-  - "nodejs"
-  - "nodejs-npm"
-  - "podman"
-  - "wget"
-  - "zsh"
-  # multimedia
-  - "ffmpeg-free" 
-  # misc
-  - "vim"
-  - "stow"
-  - "virt-manager"
-  - "neofetch"
-system_upgrade: yes
-
-#
-# Flatpaks
-# Add flatpak remotes and install flatpak applications
-#
-flatpak_remotes: 
-  - "https://dl.flathub.org/repo/flathub.flatpakrepo"
-
-flatpaks:
-  - org.signal.Signal
-  - com.discordapp.Discord
- 
-# Security
-# Whether to enable selinux.(If supported by your distribution.)
-selinux: yes
 
 # 
 # Shell
@@ -73,4 +21,88 @@ selinux: yes
 #
 shell: zsh
 ohmyzsh: true
+
+
+# 
+# External Packages
+#
+# These are a list of URL's to packages that are external to the
+# distribution's repositories and will be downloaded and installed.
+#
+# Ex: external_packages:
+#       - "https://downloads.vivaldi.com/stable/vivaldi-stable-1.14.1077.60-1.x86_64.rpm"
+#external_packages: "https://dl.discordapp.net/apps/linux/0.0.8/discord-0.0.8.tar.gz"
+
+
+#
+# Packages
+# A list of packages to install from configured repositories.
+# Set 'system_upgrade' to yes|true to upgrade all packages.
+#
+packages:
+ - "ffmpeg-free"
+ - "git"
+ - "tmux"
+ - "neovim"
+system_upgrade: yes
+
+
+#
+# Flatpaks
+# Add flatpak remotes and install flatpak applications
+#
+flatpak_remotes: 
+ - "https://dl.flathub.org/repo/flathub.flatpakrepo"
+
+flatpaks:
+ - org.signal.Signal
+ 
+# 
+# Repositories
+# Additional repositories to enable.
+#repos:
+# - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-36.noarch.rpm" 
+# - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-36.noarch.rpm" 
+
+
+# 
+# Security
+# Whether to enable selinux.(If supported by your distribution.)
+selinux: yes
+
+
+#
+# Configs
+# Place your desired configurations in the 'roles/configs/templates' directory
+# then populate the 'configs' variable below.
+# examples: .vimrc, .bashrc, .bash_profile,
+config_directories:
+  - /home/{{ username }}/.config/nvim/autoload/
+  - /home/{{ username }}/.kube/
+
+configs:
+  - file: tmux.conf
+    dest: /home/{{ username }}/.tmux.conf
+  - file: zshrc
+    dest: /home/{{ username }}/.zshrc
+  - file: jk.zsh-theme 
+    dest: /home/{{ username }}/.oh-my-zsh/themes/
+  - file: init.vim
+    dest: /home/{{ username }}/.config/nvim/
+  - file: plug.vim
+    dest: /home/{{ username }}/.config/nvim/autoload/plug.vim
+
+#dconf_settings:
+#  - key: "/org/gnome/Terminal/Legacy/Settings/confirm-close"
+#    value: "false"
+#  - key: "/org/gnome/settings-daemon/peripherals/mouse/middle-button-enabled"
+#    value: "false"
+
+# 
+# Fonts
+# Install fonts not a part of default repositories.
+# If fonts are distributed via the default repositories, add the font package name to the `packages` variable above.
+#fonts:
+#  - "https://assets.ubuntu.com/v1/fad7939b-ubuntu-font-family-0.83.zip"
+
 

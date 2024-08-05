@@ -1,9 +1,8 @@
 ---
   - name: "Adding repo via rpm"
-    ansible.builtin.dnf:
+    dnf:
       state: present
       name: "{{ item }}"
-      disable_gpg_check: true
     when: "'.rpm' in item"
     register: rpm
 
