@@ -1,14 +1,12 @@
 ---
 
   - name: "Install ansible module dependencies"
-    package:
+    ansible.builtin.dnf:
       name: "python3-psutil,python3-dnf,firewalld,python3-firewall,python3-libselinux"
       state: present
 
   - name: "Installing packages"
-    package:
+    ansible.builtin.dnf:
       name: "{{ packages + [shell] }}"
       state: present
-
-
-
+      skip_broken: true # skip any issues found between rpmfusion + core
