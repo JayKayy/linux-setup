@@ -1,0 +1,41 @@
+"plugins
+
+"visual
+syntax enable
+syntax on
+set background=dark
+
+"search
+set ignorecase "case insensitive
+set smartcase  "use case if any caps used
+set incsearch  "show match as search proceeds
+
+"indent
+set autoindent
+
+"ignore
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.o
+
+"temp files
+set nobackup
+set nowritebackup
+set noswapfile
+
+"tab sizes
+set tabstop=4
+
+"Disable arrows in insert
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+"Disable arrows in visual
+vnoremap <Up> <Nop>
+vnoremap <Down> <Nop>
+vnoremap <Left> <Nop>
+vnoremap <Right> <Nop>
+"Disable arrows in normal
+nnoremap <Up> <Nop>
+nnoremap <Down> <Nop>
+nnoremap <Left> <Nop>
+nnoremap <Right> <Nop>
