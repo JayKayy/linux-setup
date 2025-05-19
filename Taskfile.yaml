@@ -1,0 +1,9 @@
+version: 3
+
+
+tasks:
+
+  test:
+    dir: .
+    cmds:
+      - ./test/start-container.sh
