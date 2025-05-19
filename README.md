@@ -1,21 +1,19 @@
 # linux-setup
-Ansible automation for configuring Linux desktops
 
-This repository is for automating the configuration and setup of linux(mainly Fedora) installs.
+Automation for configuring Fedora linux. This handles the basics before installing [ML4W](https://github.com/mylinuxforwork).
 
+## Install 
+ 
+```
+./setup.sh
+```
 
-To begin modify `inventory/hosts` and specify the list of hosts you wish to configure.
+## Testing 
 
-Next, modify `vars/vars.yml` file with the desired configuration options listed.
+To run tests use `task` with the included Taskfile.yaml. The tests run in a fedora container so some will not fully function if
+they require `systemd` or filesystem access e.g. `flatpak`.
 
-Once the variables are set, ensure the following:
- - `sshd` is running and enabled
- - host key was accepted
- - targets have a `/usr/bin/python` interpreter defined
+```
+task -a
+```
 
-Then run the setup playbook:
-
-`ansible-playbook -u <user> -kK setup.yml`
-
-Known issues:
- - flatpaks are unable to be accessed after install. Bug seems to give `/var/lib/flatpak` the wrong permissions. This fix is allowing other users read and exec permissions on the directory: `sudo chmod -R 755 /var/lib/flatpak/`
