@@ -2,6 +2,11 @@ version: 3
 
 tasks:
 
+  install:
+    dir: .
+    cmds:
+      - "./setup.sh"
+
   test:
     vars:
       entrypoint: ./setup.sh
@@ -9,21 +14,21 @@ tasks:
     cmds:
       - "podman run -it --rm -w /test -v .:/test:Z --entrypoint={{.entrypoint}} fedora:42"
 
-  packages:
+  tpackages:
     dir: .
     vars:
       entrypoint: ./scripts/packages.sh
     cmds:
       - "podman run -it --rm -w /test -v .:/test:Z --entrypoint={{.entrypoint}} fedora:42"
 
-  shell:
+  tshell:
     dir: .
     vars:
       entrypoint: ./scripts/shell.sh
     cmds:
       - "podman run -it --rm -w /test -v .:/test:Z --entrypoint={{.entrypoint}} fedora:42"
 
-  omz:
+  tomz:
     dir: .
     vars:
       entrypoint: ./scripts/omzsh.sh
