@@ -1,12 +1,15 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -e 
 
 # Firewalld
+
 dnf install -y firewalld
 systemctl enable firewalld
 systemctl start  firewalld
 
 # SElinux
-cat << EOF >> "/etc/selinux/config"
+cat << EOF > /etc/selinux/config
 # This file controls the state of SELinux on the system.
 # SELINUX= can take one of these three values:
 #     enforcing - SELinux security policy is enforced.

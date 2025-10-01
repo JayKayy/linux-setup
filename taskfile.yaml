@@ -1,0 +1,36 @@
+version: 3
+
+env:
+  USER: dev
+
+tasks:
+
+  default:
+    cmds:
+      - task -l
+
+  install:
+    desc: Run the install script.
+    cmds:
+      - ./setup.sh
+
+  debug:
+    desc: Debug the container environment.
+    vars:
+      entrypoint: /bin/bash
+    cmds:
+      - "podman run -it --rm -w /test -v .:/test:Z --entrypoint={{.entrypoint}} fedora:42"
+
+  test:
+    desc: Run the setup script against a container (doesn't configure the host).
+    vars:
+      entrypoint: ./setup.sh
+    cmds:
+      - "podman run --rm -w /test -v .:/test:Z --entrypoint={{.entrypoint}} fedora:42"
+
+  just-test:*:
+    desc: Test a particular script in the container environment. task test:shell.sh
+    vars:
+      entrypoint: scripts/{{.index MATCH 0}}
+    cmds:
+      - "podman run --rm -w /test -v .:/test:Z --entrypoint={{.entrypoint}} fedora:42"

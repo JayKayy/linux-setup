@@ -1,17 +1,15 @@
-#!/bin/bash
-set -xe pipefail
+#!/usr/bin/env bash
 
-# As root
+set -e 
+
+if ! (( $EUID == 0 )); then
+  echo "You are not running as root. Exiting..."
+  exit 1
+fi
+
 ./scripts/packages.sh
 ./scripts/services.sh
-
-useradd -m -G wheel,docker dev 
 ./scripts/shell.sh
-
-# As User
-su - dev
-  ./scripts/omzsh.sh
-  exit 0
 
 exit 0 
 
