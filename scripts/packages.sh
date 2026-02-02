@@ -33,6 +33,7 @@ dnf install -y \
 packages=(
     @cosmic-desktop-environment
     brave-browser
+    btop
     buildah
     cargo
     cockpit
