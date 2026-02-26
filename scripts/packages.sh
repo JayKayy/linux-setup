@@ -32,6 +32,7 @@ dnf install -y \
 
 packages=(
     @cosmic-desktop-environment
+    bat
     brave-browser
     btop
     buildah
@@ -40,6 +41,7 @@ packages=(
     curl
     discord
     docker
+    exa
     ffmpeg
     flatpak
     fuzzel
