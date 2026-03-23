@@ -41,9 +41,9 @@ packages=(
     curl
     discord
     docker
-    exa
     ffmpeg
     flatpak
+    foot
     fuzzel
     fzf
     gcc

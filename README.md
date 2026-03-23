@@ -3,7 +3,11 @@
 ## Install
 
 ```bash
+# Run with Task
 task install
+
+# Run Shell
+USERNAME=dev setup.sh
 ```
 
 ## Testing
